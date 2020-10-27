@@ -8,9 +8,14 @@ import { Component } from '@angular/core';
 })
 export class PostCreateComponent {
 
-  onAddPost(){
-    alert('Post added');
-  }
+  enterValue = '';
 
+  newPost ='No Content';
+
+  onAddPost(postInput: HTMLTextAreaElement){
+
+    this.newPost= postInput.value;
+    // alert('Post added');
+  }
 
 }
