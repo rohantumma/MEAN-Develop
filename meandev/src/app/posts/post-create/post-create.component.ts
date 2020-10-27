@@ -1,5 +1,5 @@
 import { from } from 'rxjs';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-post-create',
@@ -9,13 +9,19 @@ import { Component } from '@angular/core';
 })
 export class PostCreateComponent {
 
-  enterValue = '';
+  enterTitle = "";
+  enterContent = "";
 
-  newPost ='';
+  @Output() postCreated = new EventEmitter(); //event
+
 
   onAddPost(){
 
-    this.newPost= this.enterValue;
+    const post={
+      title: this.enterTitle,
+      content: this.enterContent
+    };
+    this.postCreated.emit(post);
 
   }
 
