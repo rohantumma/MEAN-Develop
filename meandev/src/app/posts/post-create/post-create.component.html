@@ -1,11 +1,28 @@
 
 <mat-card>
-  <mat-form-field>
-    <input matInput  [(ngModel)]="enterTitle" placeholder="Title" type="text">
-  </mat-form-field>
-  <mat-form-field>
-      <textarea matInput [(ngModel)]="enterContent" placeholder="Content" cols="30" rows="5"></textarea>
-  </mat-form-field>
-    <button mat-raised-button (click)="onAddPost()">Save Post</button>
+  <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+    <mat-form-field>
+      <input
+          matInput
+          name="title"
+          ngModel
+          required
+          placeholder="Title"
+          type="text">
+    </mat-form-field>
+    <mat-form-field>
+        <textarea
+          matInput
+          name="content"
+          ngModel
+          required
+          placeholder="Content" cols="30" rows="5"></textarea>
+    </mat-form-field>
+      <button
+          mat-raised-button
+          type="submit"
+          color="red"
+          >Save Post</button>
+  </form>
 </mat-card>
 
