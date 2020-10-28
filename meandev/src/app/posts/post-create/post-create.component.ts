@@ -24,7 +24,7 @@ export class PostCreateComponent {
       return;
     }
     this.postsService.addPost(form.value.title, form.value.content);
-
+    form.resetForm();//setting null after submission
     }
 
 }
