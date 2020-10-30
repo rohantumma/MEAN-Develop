@@ -5,6 +5,7 @@ const mongoose = require ('mongoose');
 
 
 const Post = require ('./models/post');
+const { create } = require("./models/post");
 
 const app = express();
 
@@ -44,9 +45,11 @@ app.post("/api/posts", (req, res, next) => {
   });
   console.log(post);
   //save post into db auto creat write Query into db
-  post.save();
-  res.status(201).json({
-    message: 'Post added successfully'
+  post.save().then(result=>{
+    res.status(201).json({
+    message: 'Post added successfully',
+    postId: post._id
+    });
   });
 });
 
