@@ -12,6 +12,9 @@ import { MatInputModule,
 import { MatButtonModule} from "@angular/material";
 
 
+import { HttpClient } from "@angular/common/http";
+import { HttpClientModule } from  "@angular/common/http";
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,7 +23,6 @@ import { PostCreateComponent } from "./posts/post-create/post-create.component";
 import { from } from 'rxjs';
 import { HeaderComponent } from './header/header.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
-import { PostsService } from './posts/posts.service';
 
 
 @NgModule({
@@ -39,9 +41,11 @@ import { PostsService } from './posts/posts.service';
     MatCardModule,
     MatButtonModule,
     MatToolbarModule,
-    MatExpansionModule
+    MatExpansionModule,
+    HttpClientModule
+
   ],
-  providers: [PostsService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
