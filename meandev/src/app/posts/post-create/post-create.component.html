@@ -1,22 +1,25 @@
 
 <mat-card>
-  <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+  <form (submit)="onSavePost(postForm)" #postForm="ngForm">
     <mat-form-field>
       <input
-          matInput
-          name="title"
-          ngModel
-          required
-          placeholder="Title"
-          type="text">
+        matInput
+        type="text"
+        name="title"
+        [ngModel]="post?.title"
+        required
+        placeholder="Post Title"
+        #title="ngModel">
     </mat-form-field>
     <mat-form-field>
-        <textarea
-          matInput
-          name="content"
-          ngModel
-          required
-          placeholder="Content" cols="30" rows="5"></textarea>
+      <textarea
+        matInput
+        rows="4"
+        name="content"
+        [ngModel]="post?.content"
+        required
+        placeholder="Post Content"
+        #content="ngModel"></textarea>
     </mat-form-field>
       <button
           mat-raised-button

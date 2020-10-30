@@ -6,6 +6,7 @@ const mongoose = require ('mongoose');
 
 const Post = require ('./models/post');
 const { create } = require("./models/post");
+const { json } = require("body-parser");
 
 const app = express();
 
@@ -31,7 +32,7 @@ app.use((req, res, next) => {
   );
   res.setHeader(
     "Access-Control-Allow-Methods",
-    "GET, POST, PATCH, DELETE, OPTIONS"
+    "GET, POST, PATCH, PUT, DELETE, OPTIONS"
   );
   next();
 });
@@ -76,6 +77,19 @@ app.get("/api/posts", (req, res, next) => {
           posts: document
         });
     });
+});
+
+app.put("/api/posts/:_id",(req,res,next)=>{
+  const post= new Post({
+    _id: req.body._id,
+    title: req.body.title,
+    content: req.body.content
+  });
+  Post.updateOne({_id: req.params._id},post)
+  .then(result =>{
+    console.log(result);
+    res.status(200),json({message: "UPDATE DONE..."});
+  });
 });
 
 //deleted by _id
