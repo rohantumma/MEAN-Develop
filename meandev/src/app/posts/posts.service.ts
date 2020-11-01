@@ -1,12 +1,12 @@
 import { from, Subject } from 'rxjs';
 import { Injectable } from "@angular/core";
 
+import { Router } from "@angular/router";
+
 import { HttpClient } from "@angular/common/http";
 
 
 import { Post } from "./post.model";
-
-import { Router } from "@angular/router";
 
 @Injectable({ providedIn: "root" })
 export class PostsService {
@@ -22,9 +22,7 @@ export class PostsService {
     .subscribe((postData) =>{
      this.posts = postData.posts;
      this.postsUpdated.next([...this.posts]);
-
     });
-
   }
 
   getPostUpdate()
@@ -50,6 +48,7 @@ export class PostsService {
         post._id=_id;
         this.posts.push(post);
         this.postsUpdated.next([...this.posts]);
+        this.router.navigate(["/"]);
       });
   }
 
@@ -57,8 +56,9 @@ export class PostsService {
     const post: Post = { _id: _id, title: title, content: content };
     this.http
       .put("http://localhost:3000/api/posts/" + _id, post)
-      .subscribe(response => console.log("uPDATE dATAUpdate.."));
+      .subscribe(response => console.log("Updated Post.."));
     console.log("Update.."); //log delete
+    this.router.navigate(["/"]);
   }
 
   deletePost(postId: string){
