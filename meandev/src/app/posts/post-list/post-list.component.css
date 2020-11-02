@@ -6,3 +6,10 @@
 .info-text{
   text-align: center;
 }
+
+mat-expansion-panel-header,
+mat-expansion-panel
+{
+  border-radius: 9px;
+  margin: 3px;
+}

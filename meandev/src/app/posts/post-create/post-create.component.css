@@ -8,6 +8,10 @@ mat-spinner{
   margin: auto;
 }
 
+mat-card{
+  border-radius: 9px;
+}
+
 
 
 
