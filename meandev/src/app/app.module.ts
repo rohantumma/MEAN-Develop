@@ -7,7 +7,6 @@ import { MatInputModule,
          MatCardModule,
          MatToolbarModule,
          MatExpansionModule,
-         MatProgressSpinner,
          MatProgressSpinnerModule
 
        } from "@angular/material";
