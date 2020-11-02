@@ -1,17 +1,29 @@
+<div class="loader" *ngIf="isLoading">
+  <svg>
+    <defs>
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 5 -2" result="gooey" />
+        <feComposite in="SourceGraphic" in2="gooey" operator="atop"/>
+      </filter>
+    </defs>
+  </svg>
+</div>
 
-<mat-spinner *ngIf="isLoading"></mat-spinner>
+
+
 <div *ngIf="!isLoading">
-<mat-accordion *ngIf="posts.length >=1" >
-  <mat-expansion-panel *ngFor="let post of posts" >
-    <mat-expansion-panel-header>
-      {{ post.title }}
-    </mat-expansion-panel-header>
-    <p>{{ post.content }}</p>
-    <mat-action-row>
-      <a mat-button color="primary" [routerLink]="['/edit',post._id]">Edit</a>
-      <button (click)="onDelete(post._id)" mat-button color="warn" >Delete</button>
-    </mat-action-row>
-  </mat-expansion-panel>
-</mat-accordion>
-<p class="info-text mat-body-1" *ngIf="posts.length <=0">No Post Yet</p>
+  <mat-accordion *ngIf="posts.length >=1" >
+    <mat-expansion-panel *ngFor="let post of posts" >
+      <mat-expansion-panel-header>
+        {{ post.title }}
+      </mat-expansion-panel-header>
+      <p>{{ post.content }}</p>
+      <mat-action-row>
+        <a mat-button color="primary" [routerLink]="['/edit',post._id]">Edit</a>
+        <button (click)="onDelete(post._id)" mat-button color="warn" >Delete</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <p class="info-text mat-body-1" *ngIf="posts.length <=0">No Post Yet</p>
 </div>

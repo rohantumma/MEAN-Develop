@@ -6,7 +6,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule,
          MatCardModule,
          MatToolbarModule,
-         MatExpansionModule
+         MatExpansionModule,
+         MatProgressSpinner,
+         MatProgressSpinnerModule
 
        } from "@angular/material";
 import { MatButtonModule} from "@angular/material";
@@ -42,6 +44,7 @@ import { PostListComponent } from './posts/post-list/post-list.component';
     MatButtonModule,
     MatToolbarModule,
     MatExpansionModule,
+    MatProgressSpinnerModule,
     HttpClientModule
 
   ],

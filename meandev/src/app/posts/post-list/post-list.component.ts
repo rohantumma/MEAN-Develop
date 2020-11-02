@@ -7,7 +7,7 @@ import { PostsService } from "../posts.service";
 @Component({
   selector: "app-post-list",
   templateUrl: "./post-list.component.html",
-  styleUrls: ["./post-list.component.css"]
+  styleUrls: ["./post-list.component.css","./loader.css"]
 })
 export class PostListComponent implements OnInit, OnDestroy {
   // posts = [
