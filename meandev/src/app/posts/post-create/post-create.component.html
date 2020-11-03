@@ -1,27 +1,32 @@
-
-
 <mat-card>
-  <form (submit)="onSavePost(postForm)" #postForm="ngForm" >
+  <form [formGroup]="form" (submit)="onSavePost()">
     <mat-form-field>
       <input
         matInput
         type="text"
-        name="title"
-        [ngModel]="post?.title"
-        required
+        formControlName="title"
         placeholder="Post Title"
-        #title="ngModel">
+        >
+
     </mat-form-field>
     <mat-form-field>
       <textarea
         matInput
-        rows="4"
-        name="content"
-        [ngModel]="post?.content"
-        required
+        formControlName="content"
         placeholder="Post Content"
-        #content="ngModel"></textarea>
+        ></textarea>
+
     </mat-form-field>
+    <div>
+      <input type="file"
+             style="visibility: hidden;"
+             #filepicker >
+      <button mat-stroked-button
+              type="button"
+              (click)="filepicker.click()"
+              >Image
+      </button>
+    </div>
       <button
           mat-raised-button
           type="submit"
