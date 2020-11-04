@@ -10,6 +10,7 @@ import { PostsService } from "../posts.service";
   templateUrl: "./post-list.component.html",
   styleUrls: ["./post-list.component.css","./loader.css"]
 })
+
 export class PostListComponent implements OnInit, OnDestroy {
   // posts = [
   //   { title: "First Post", content: "This is the first post's content" },
