@@ -15,3 +15,14 @@ mat-expansion-panel
   border-radius: 9px;
   margin: 3px;
 }
+
+.post-image{
+  width: 100%;
+}
+
+.post-image img{
+  width: 100%;
+  box-shadow: 1px 1px 5px coral;
+}
+
+
