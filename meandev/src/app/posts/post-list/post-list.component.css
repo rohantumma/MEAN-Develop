@@ -17,12 +17,12 @@ mat-expansion-panel
 }
 
 .post-image{
-  width: 100%;
+  width: 40%;
 }
 
 .post-image img{
-  width: 100%;
-  box-shadow: 1px 1px 5px coral;
+  width: 40%;
+  box-shadow: 1px 1px 5px rgb(240, 183, 28);
 }
 
 

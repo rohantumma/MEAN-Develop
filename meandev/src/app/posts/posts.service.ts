@@ -1,15 +1,10 @@
-import { from, Subject } from 'rxjs';
 import { Injectable } from "@angular/core";
-
+import { HttpClient } from "@angular/common/http";
+import { Subject } from "rxjs";
+import { map } from "rxjs/operators";
 import { Router } from "@angular/router";
 
-import { map } from "rxjs/operators";
-
-import { HttpClient } from "@angular/common/http";
-
-
 import { Post } from "./post.model";
-
 
 @Injectable({ providedIn: "root" })
 export class PostsService {
@@ -70,7 +65,6 @@ export class PostsService {
         this.postsUpdated.next([...this.posts]);
         this.router.navigate(["/"]);
       });
-
   }
 
   updatePost(id: string, title: string, content: string, image: File | string) {
@@ -105,7 +99,6 @@ export class PostsService {
         this.postsUpdated.next([...this.posts]);
         this.router.navigate(["/"]);
       });
-
   }
 
   deletePost(postId: string) {
@@ -118,4 +111,3 @@ export class PostsService {
       });
   }
 }
-
