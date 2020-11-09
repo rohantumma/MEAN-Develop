@@ -24,7 +24,12 @@ import { AppComponent } from './app.component';
 import { PostCreateComponent } from "./posts/post-create/post-create.component";
 import { from } from 'rxjs';
 import { HeaderComponent } from './header/header.component';
+import { HeaderComponentExp } from './header_exp/header.component';
+
 import { PostListComponent } from './posts/post-list/post-list.component';
+
+import { FormComponentExp } from './form/form.component';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 @NgModule({
@@ -32,7 +37,9 @@ import { PostListComponent } from './posts/post-list/post-list.component';
     AppComponent,
     PostCreateComponent,
     HeaderComponent,
-    PostListComponent
+    PostListComponent,
+    FormComponentExp,
+    HeaderComponentExp
   ],
   imports: [
     BrowserModule,
@@ -45,7 +52,8 @@ import { PostListComponent } from './posts/post-list/post-list.component';
     MatToolbarModule,
     MatExpansionModule,
     MatProgressSpinnerModule,
-    HttpClientModule
+    HttpClientModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

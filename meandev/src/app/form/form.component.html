@@ -1,0 +1,58 @@
+<!-- <div>
+  <div class="neu">
+    <div class="header">
+      Messages
+    </div>
+    <nav class="menu">
+        <ul>
+          <li><i class="fa fa-home"></i><a routerLink="/">MyMessage</a></li>
+          <li><i class="fa fa-info-circle" ></i> <a routerLink="/create">New Post</a></li>
+        </ul>
+    </nav>
+  </div>
+</div> -->
+
+
+
+<mat-card>
+  <form [formGroup]="form" (submit)="onSavePost()">
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="title"
+        placeholder="Post Title">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <textarea
+        matInput
+        rows="4"
+        formControlName="content"
+        placeholder="Post Content"></textarea>
+    </mat-form-field>
+
+    <label id="example-radio-group-label">Pick your favorite season</label>
+    <mat-radio-group
+      aria-labelledby="example-radio-group-label"
+      class="example-radio-group"
+
+      (click)="onSelect( favoriteSeason)">
+      <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+        {{season}}
+      </mat-radio-button>
+    </mat-radio-group>
+    <div>Your favorite season is: {{favoriteSeason}}</div>
+
+    <br>
+    <br>
+      <button
+          mat-raised-button
+          type="submit"
+          color="red"
+          >Save Post</button>
+  </form>
+</mat-card>
+
+
+
