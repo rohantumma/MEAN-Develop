@@ -8,7 +8,8 @@ import {
   MatCardModule,
   MatToolbarModule,
   MatExpansionModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatPaginatorModule
 
        } from "@angular/material";
 import { MatButtonModule} from "@angular/material";
@@ -46,7 +47,8 @@ import {MatRadioModule} from '@angular/material/radio';
     MatExpansionModule,
     MatProgressSpinnerModule,
     HttpClientModule,
-    MatRadioModule
+    MatRadioModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

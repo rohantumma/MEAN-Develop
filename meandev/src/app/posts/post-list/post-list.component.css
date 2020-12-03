@@ -25,4 +25,9 @@ mat-expansion-panel
   box-shadow: 1px 1px 5px rgb(240, 183, 28);
 }
 
+mat-paginator {
+  margin: 1rem ;
+  border-radius: 9px;
+}
+
 
